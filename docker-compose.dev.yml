@@ -1,0 +1,23 @@
+version: '3'
+services:
+  client:
+    tty: true
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./jeeves-client
+    volumes:
+      # - /home/jeeves/node_modules
+      - ./jeeves-client:/home/jeeves
+
+  nginx:
+    restart: always
+    image: ermiry/jeeves-nginx:development
+    ports:
+      - '80:80'
+    depends_on:
+      - client
+
+networks:
+  default:
+    external:
+      name: jeeves
