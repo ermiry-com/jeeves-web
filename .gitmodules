@@ -1,0 +1,6 @@
+[submodule "jeeves-client"]
+	path = jeeves-client
+	url = https://github.com/ermiry-com/jeeves-client
+[submodule "jeeves"]
+	path = jeeves
+	url = https://github.com/ermiry-com/jeeves
