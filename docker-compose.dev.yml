@@ -12,6 +12,8 @@ services:
   nginx:
     restart: always
     image: ermiry/jeeves-nginx:development
+    volumes:
+      - ./uploads:/home/api/uploads
     ports:
       - '80:80'
     depends_on:
